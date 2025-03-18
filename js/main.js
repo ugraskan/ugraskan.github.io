@@ -78,14 +78,6 @@
     });
 
     /*------------------
-        Video Player
-    --------------------*/
-    const player = new Plyr('#player', {
-        controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'captions', 'settings', 'fullscreen'],
-        seekTime: 25
-    });
-
-    /*------------------
         Niceselect
     --------------------*/
     $('select').niceSelect();

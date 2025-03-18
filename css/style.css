@@ -1140,24 +1140,20 @@ ol {
 	border-radius: 2px;
 }
 
-/*---------------------
-  Anime Watching
------------------------*/
-
 .game_section {
 	margin-bottom: 70px;
 }
 
 #gameFrame {
     width: 100%;
-    height: 720px; /* Masaüstü için */
+    height: 720px; 
     max-width: 1280px;
 }
 
-@media (max-width: 768px) { /* Mobil ekranlar için */
+@media (max-width: 768px) { 
     #gameFrame {
-        width: 100vw;  /* Viewport genişliği kadar */
-        height: 60vh;  /* Viewport yüksekliğinin %60'ı */
+        width: 100vw; 
+        height: 60vh; 
     }
 	#fullscreenBtn {
         left: 50%;
@@ -1171,12 +1167,15 @@ ol {
 		padding-top: 20px;
 	}
 	.game__details__rating {
-        position: static; /* Absolute kaldır */
-        margin-top: 10px; /* Başlık ile biraz boşluk bırak */
+        position: static; 
+        margin-top: 10px; 
         display: flex;
-        justify-content: flex-start; /* Sola hizala */
-        gap: 5px; /* Yıldızlar arasına boşluk ekle */
+        justify-content: flex-start; 
+        gap: 5px; 
     }
+	#footer_text{
+		text-align: center;
+	}
 }
 
 .anime__video__player .plyr--video {
