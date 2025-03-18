@@ -1,35 +1,3 @@
-/******************************************************************
-  Theme Name: Anime
-  Description: Anime video tamplate
-  Author: Colorib
-  Author URI: https://colorib.com/
-  Version: 1.0
-  Created: Colorib
-******************************************************************/
-
-/*------------------------------------------------------------------
-[Table of contents]
-
-1.  Template default CSS
-	1.1	Variables
-	1.2	Mixins
-	1.3	Flexbox
-	1.4	Reset
-2.  Helper Css
-3.  Header Section
-4.  Hero Section
-5.  Banner Section
-6.  Product Section
-7.  Intagram Section
-8.  Latest Section
-9.  Contact
-10.  Footer Style
--------------------------------------------------------------------*/
-
-/*----------------------------------------*/
-
-/* Template default CSS
-/*----------------------------------------*/
 
 html,
 body {
@@ -108,10 +76,6 @@ ol {
 	margin: 0;
 }
 
-/*---------------------
-  Helper CSS
------------------------*/
-
 .section-title {
 	margin-bottom: 30px;
 }
@@ -161,8 +125,6 @@ ol {
 .text-white a {
 	color: #fff;
 }
-
-/* buttons */
 
 .primary-btn {
 	display: inline-block;
@@ -945,31 +907,31 @@ ol {
   Anime Details
 -----------------------*/
 
-.anime-details {
+.game-details {
 	padding-top: 60px;
 }
 
-.anime__details__content {
+.game__details__content {
 	margin-bottom: 65px;
 }
 
-.anime__details__text {
+.game__details__text {
 	position: relative;
 }
 
-.anime__details__text p {
+.game__details__text p {
 	color: #b7b7b7;
 	font-size: 18px;
 	line-height: 30px;
 }
 
-.anime__details__pic {
+.game__details__pic {
 	height: 440px;
 	border-radius: 5px;
 	position: relative;
 }
 
-.anime__details__pic .comment {
+.game__details__pic .comment {
 	font-size: 13px;
 	color: #ffffff;
 	background: #3d3d3d;
@@ -981,7 +943,7 @@ ol {
 	bottom: 25px;
 }
 
-.anime__details__pic .view {
+.game__details__pic .view {
 	font-size: 13px;
 	color: #ffffff;
 	background: #3d3d3d;
@@ -993,50 +955,50 @@ ol {
 	bottom: 25px;
 }
 
-.anime__details__title {
+.game__details__title {
 	margin-bottom: 20px;
 }
 
-.anime__details__title h3 {
+.game__details__title h3 {
 	color: #ffffff;
 	font-weight: 700;
 	margin-bottom: 13px;
 }
 
-.anime__details__title span {
+.game__details__title span {
 	font-size: 15px;
 	color: #b7b7b7;
 	display: block;
 }
 
-.anime__details__rating {
+.game__details__rating {
 	text-align: center;
 	position: absolute;
 	right: 0;
 	top: 0;
 }
 
-.anime__details__rating .rating i {
+.game__details__rating .rating i {
 	font-size: 24px;
 	color: #e89f12;
 	display: inline-block;
 }
 
-.anime__details__rating span {
+.game__details__rating span {
 	display: block;
 	font-size: 18px;
 	color: #b7b7b7;
 }
 
-.anime__details__widget {
+.game__details__widget {
 	margin-bottom: 15px;
 }
 
-.anime__details__widget ul {
+.game__details__widget ul {
 	margin-bottom: 20px;
 }
 
-.anime__details__widget ul li {
+.game__details__widget ul li {
 	list-style: none;
 	font-size: 15px;
 	color: #ffffff;
@@ -1045,7 +1007,7 @@ ol {
 	padding-left: 18px;
 }
 
-.anime__details__widget ul li:before {
+.game__details__widget ul li:before {
 	position: absolute;
 	left: 0;
 	top: 12px;
@@ -1055,13 +1017,13 @@ ol {
 	content: "";
 }
 
-.anime__details__widget ul li span {
+.game__details__widget ul li span {
 	color: #b7b7b7;
 	width: 115px;
 	display: inline-block;
 }
 
-.anime__details__btn .follow-btn {
+.game__details__btn .follow-btn {
 	font-size: 13px;
 	color: #ffffff;
 	background: #e53637;
@@ -1074,7 +1036,7 @@ ol {
 	margin-right: 11px;
 }
 
-.anime__details__btn .watch-btn span {
+.game__details__btn .watch-btn span {
 	font-size: 13px;
 	color: #ffffff;
 	background: #e53637;
@@ -1087,7 +1049,7 @@ ol {
 	margin-right: 1px;
 }
 
-.anime__details__btn .watch-btn i {
+.game__details__btn .watch-btn i {
 	font-size: 20px;
 	display: inline-block;
 	background: #e53637;
@@ -1096,22 +1058,22 @@ ol {
 	border-radius: 0 4px 4px 0;
 }
 
-.anime__details__review {
+.game__details__review {
 	margin-bottom: 55px;
 }
 
-.anime__review__item {
+.game__review__item {
 	overflow: hidden;
 	margin-bottom: 15px;
 }
 
-.anime__review__item__pic {
+.game__review__item__pic {
 	float: left;
 	margin-right: 20px;
 	position: relative;
 }
 
-.anime__review__item__pic:before {
+.game__review__item__pic:before {
 	position: absolute;
 	right: -30px;
 	top: 15px;
@@ -1123,37 +1085,37 @@ ol {
 	transform: rotate(45deg);
 }
 
-.anime__review__item__pic img {
+.game__review__item__pic img {
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
 }
 
-.anime__review__item__text {
+.game__review__item__text {
 	overflow: hidden;
 	background: #1d1e39;
 	padding: 18px 30px 16px 20px;
 	border-radius: 10px;
 }
 
-.anime__review__item__text h6 {
+.game__review__item__text h6 {
 	color: #ffffff;
 	font-weight: 700;
 	margin-bottom: 10px;
 }
 
-.anime__review__item__text h6 span {
+.game__review__item__text h6 span {
 	color: #b7b7b7;
 	font-weight: 400;
 }
 
-.anime__review__item__text p {
+.game__review__item__text p {
 	color: #b7b7b7;
 	line-height: 23px;
 	margin-bottom: 0;
 }
 
-.anime__details__form form textarea {
+.game__details__form form textarea {
 	width: 100%;
 	font-size: 15px;
 	color: #b7b7b7;
@@ -1166,7 +1128,7 @@ ol {
 	margin-bottom: 24px;
 }
 
-.anime__details__form form button {
+.game__details__form form button {
 	font-size: 11px;
 	color: #ffffff;
 	font-weight: 700;
@@ -1182,7 +1144,7 @@ ol {
   Anime Watching
 -----------------------*/
 
-.anime__video__player {
+.game_section {
 	margin-bottom: 70px;
 }
 
@@ -2108,7 +2070,7 @@ ol {
 	.anime__details__widget ul li span {
 		width: 90px;
 	}
-	.anime__details__pic {
+	.game__details__pic {
 		margin-bottom: 40px;
 	}
 	.anime__details__sidebar {
@@ -2214,7 +2176,7 @@ ol {
 		font-size: 34px;
 		line-height: normal;
 	}
-	.anime__details__pic {
+	.game__details__pic {
 		margin-bottom: 40px;
 	}
 	.anime__details__sidebar {
@@ -2353,7 +2315,7 @@ ol {
     border: 3px solid white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-    color:white;
+	margin-top: 25px;
 }
 
 .qrsection {
@@ -2363,14 +2325,6 @@ ol {
 
 .qrsection p {
     color: white;
-}
-
-.qr-content p:first-child {
-	font-size: 24px !important;
-	font-weight: bold !important;
-}
-.qr-content p:last-child {
-	font-size: 18px !important;
 }
 
 html body .qrsection .qr-content p {
@@ -2398,4 +2352,16 @@ iframe {
 
 html, body {
     overflow-x: hidden;
+}
+
+#qr_text1{
+	font-size: 2rem;
+}
+
+#qr_text2{
+	font-size: 1.4rem;
+}
+
+#footer_text{
+	color:white;
 }

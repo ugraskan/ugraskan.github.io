@@ -99,3 +99,17 @@
      });
 
 })(jQuery);
+
+document.getElementById("fullscreenBtn").addEventListener("click", function () {
+    var iframe = document.getElementById("gameFrame");
+
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari ve Opera
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { // Internet Explorer / Edge
+        iframe.msRequestFullscreen();
+    }
+});
