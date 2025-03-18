@@ -2365,3 +2365,33 @@ html, body {
 #footer_text{
 	color:white;
 }
+
+#fullscreenBtn {
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	font-weight: 700;
+	border: none;
+	border-radius: 5px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 20px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#fullscreenBtn:hover {
+	background: #c12b2c;
+}
+
+#fullscreenBtn::before {
+	content: "⛶"; /* Fullscreen Unicode simgesi */
+	font-size: 18px;
+	margin-right: 8px;
+}

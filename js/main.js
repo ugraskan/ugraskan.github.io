@@ -104,12 +104,28 @@ document.getElementById("fullscreenBtn").addEventListener("click", function () {
     var iframe = document.getElementById("gameFrame");
 
     if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
+        iframe.requestFullscreen().then(() => {
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock("landscape").catch(err => console.log(err));
+            }
+        });
     } else if (iframe.mozRequestFullScreen) { // Firefox
-        iframe.mozRequestFullScreen();
+        iframe.mozRequestFullScreen().then(() => {
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock("landscape").catch(err => console.log(err));
+            }
+        });
     } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari ve Opera
-        iframe.webkitRequestFullscreen();
+        iframe.webkitRequestFullscreen().then(() => {
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock("landscape").catch(err => console.log(err));
+            }
+        });
     } else if (iframe.msRequestFullscreen) { // Internet Explorer / Edge
-        iframe.msRequestFullscreen();
+        iframe.msRequestFullscreen().then(() => {
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock("landscape").catch(err => console.log(err));
+            }
+        });
     }
 });
