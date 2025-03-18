@@ -1148,6 +1148,19 @@ ol {
 	margin-bottom: 70px;
 }
 
+#gameFrame {
+    width: 100%;
+    height: 720px; /* Masaüstü için */
+    max-width: 1280px;
+}
+
+@media (max-width: 768px) { /* Mobil ekranlar için */
+    #gameFrame {
+        width: 100vw;  /* Viewport genişliği kadar */
+        height: 60vh;  /* Viewport yüksekliğinin %60'ı */
+    }
+}
+
 .anime__video__player .plyr--video {
 	border-radius: 5px;
 	background: transparent;
