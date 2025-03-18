@@ -2381,3 +2381,21 @@ html body .qrsection .qr-content p {
     line-height: normal !important;
     margin: 5px 0 !important;
 }
+
+iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+	overflow: hidden;
+}
+
+.bg_thumbnail_text {
+    background: rgba(0, 0, 0, 0.6); /* Siyah arka plan (60% opaklık) */
+    padding: 20px; /* İç boşluk */
+    border-radius: 10px; /* Köşeleri yuvarlatma */
+    display: inline-block; /* İçeriğe göre boyutlanması için */
+}
+
+html, body {
+    overflow-x: hidden;
+}
