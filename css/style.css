@@ -908,7 +908,7 @@ ol {
 -----------------------*/
 
 .game-details {
-	padding-top: 60px;
+	padding-top: 20px;
 }
 
 .game__details__content {
@@ -1159,6 +1159,24 @@ ol {
         width: 100vw;  /* Viewport genişliği kadar */
         height: 60vh;  /* Viewport yüksekliğinin %60'ı */
     }
+	#fullscreenBtn {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+	.game-details {
+		padding-top: 20px;
+	}
+	.breadcrumb-option {
+		padding-top: 20px;
+	}
+	.game__details__rating {
+        position: static; /* Absolute kaldır */
+        margin-top: 10px; /* Başlık ile biraz boşluk bırak */
+        display: flex;
+        justify-content: flex-start; /* Sola hizala */
+        gap: 5px; /* Yıldızlar arasına boşluk ekle */
+    }
 }
 
 .anime__video__player .plyr--video {
@@ -1268,7 +1286,7 @@ ol {
 -----------------------*/
 
 .breadcrumb-option {
-	padding-top: 35px;
+	padding-top: 25px;
 }
 
 .breadcrumb__links a {
@@ -2404,7 +2422,10 @@ html, body {
 }
 
 #fullscreenBtn::before {
-	content: "⛶"; /* Fullscreen Unicode simgesi */
+	content: "⛶";
 	font-size: 18px;
 	margin-right: 8px;
+}
+.icon_search{
+	visibility:hidden;
 }

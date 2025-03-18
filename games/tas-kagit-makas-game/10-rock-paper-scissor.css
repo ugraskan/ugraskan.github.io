@@ -1,0 +1,696 @@
+/*  */
+#Nav{
+  background-color: rgba(31,32,48,255);
+  
+}
+.bg-custom {
+  background-color: rgba(31,32,48,1) !important;
+}
+form{
+  margin-right: auto;
+
+}
+
+
+#Input{
+  padding-left: 10px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 8px 15px;
+  width: 400px;
+  outline: none;
+}
+
+#Input::placeholder {
+  color: #aaa;
+}
+
+#Input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+
+/* //////////// */
+main{
+  box-sizing: border-box;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 60%;
+  height: 80%;
+  background-color: rgb(25,25,25);
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+    
+.title{
+  font-size: 30px;
+  display: flex;
+  font-weight: bold;
+}
+.dropDown{
+  position: absolute;
+  margin-left: 91%;
+  top: 5%;
+  display: inline-flex;
+  flex-direction: column;
+}
+.dropDown>button>i{
+  cursor: pointer;
+
+}
+
+.bidown{
+  display: none;
+}
+
+.imgDown{
+  top: 0%;
+  right: 10%;/*bununla resimdeki iconlari sola yasladik*/
+  margin-right: 100%;
+  position: absolute;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  
+}
+
+
+.playground{
+  display:block;
+  left: auto;
+  right: auto;
+  text-align: center;
+}
+
+.resBoard{
+  display: block;
+}
+.move-icon{
+  height: 50px;
+  
+}
+.move-btn{
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 60px;
+  margin-right: 25px;
+  padding: 25px 25px;
+  width: 120px;
+  height: 120px;
+  cursor:pointer;
+  
+}
+.result{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top:40px;
+  margin-right: 20px;
+}
+.score{
+  margin-top: 50px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.reset-score-btn,
+.auto-play-btn{
+  background-color: white;
+  border: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+    
+
+/* FUll screen active */
+/* .fullscreen-active{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  font-size: 1.5rem;
+} */
+
+/* .fullscreen-active .playground{
+  transform: scale(1.4);
+  margin-top: auto;
+  
+} */
+
+.fullscreen-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+
+.fullscreen-active.bg-custom-alt {
+  background: linear-gradient(135deg, 
+    #ffd700 0%,
+    #686326 25%,
+    #9c6f0e 50%,
+    #4e4003 75%,
+    #ffd700 100%);
+  background-size: 400% 400%;
+  animation: desertGradient 20s ease infinite;
+}
+
+.fullscreen-active .playground {
+  transform: scale(1.4);
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.fullscreen-active .move-btn.mode1-btn {
+  border: 3px solid white;
+  border-radius: 60px;
+  width: 120px;
+  height: 120px;
+}
+
+.fullscreen-active .move-btn.mode2-btn {
+  border: none;
+  width: 120px;
+  height: 120px;
+}
+.fullscreen-active .score {
+  position: fixed;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.fullscreen-active .title{
+  /* margin-bottom:9%; */
+  color: yellow;
+}
+
+.fullscreen-active button{
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+.fullscreen-active .dropDown button{
+  font-size: .7rem;
+}
+.fullscreen-active .volume-control {
+  position: absolute;
+  display: none;
+  width: 75px;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  left: 30%;
+  top: 95%;
+  margin-top: 103px;
+  z-index: 3;
+}
+
+#imbra{
+  width: 80px;
+  height: 80px;
+  top: 2%;
+  left: 2%;
+  /* position: absolute; */
+}
+
+.fullscreen-active 
+  #tempro{
+  display: none;
+}
+
+/* Update these styles */
+.volume-control {
+  position: absolute;
+  display: none;
+  width: 75px;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  left: 0%;
+  top: 100%;
+  margin-top: 103px;
+  z-index: 3;
+}
+
+.volume-bar {
+  width: 100px;
+  height: 5px;
+  -webkit-appearance: none;
+  background: #4065a8;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.volume-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-bar::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+#btn4:hover .volume-control {
+  display: block;
+}
+
+/* Add this new style for the button container */
+#btn4 {
+  position: relative;
+}
+
+#point{
+  padding: 2px;
+  color: yellow;
+}
+
+
+
+
+
+
+/* Add responsive design rules */
+
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .move-btn {
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    margin-right: 10px;
+  }
+  
+  .move-icon {
+    height: 35px;
+  }
+  
+  .result {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+  
+  .reset-score-btn,
+  .auto-play-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .move-btn {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    margin-right: 8px;
+  }
+  
+  .move-icon {
+    height: 25px;
+  }
+  
+  .result {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .score {
+    margin-top: 30px;
+  }
+  
+  .dropDown {
+    margin-left: 85%;
+  }
+
+  /* Add styles for control buttons in mobile view */
+  .reset-score-btn,
+  .auto-play-btn {
+    display: inline-block;
+    margin: 5px;
+    font-size: 12px;
+    padding: 6px 10px;
+    min-width: 80px;
+  }
+
+  /* Container for control buttons */
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .fullscreen-active .playground {
+    transform: scale(1.2);
+    margin-top: 12vh;
+  }
+  .fullscreen-active .move-btn.mode1-btn,
+  .fullscreen-active .move-btn.mode2-btn {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+  .fullscreen-active .move-icon {
+    height: 45px;
+  }
+  .fullscreen-active .score {
+    bottom: 10vh;
+  }
+  .fullscreen-active .reset-score-btn,
+  .fullscreen-active .auto-play-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-width: 90px;
+  }
+}
+
+/* Adjust volume control for mobile */
+@media screen and (max-width: 768px) {
+  .volume-control {
+    width: 50px;
+    margin-top: 83px;
+  }
+  
+  .volume-bar {
+    width: 80px;
+    height: 4px;
+  }
+  
+  .volume-bar::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .volume-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+  }
+
+  
+}
+
+/* Add mobile fullscreen adjustments */
+@media screen and (max-width: 480px) {
+
+  .fullscreen-active .title{
+    display: none;
+  }
+  main{
+    top: 20%;
+    padding-top: 40px;
+  }
+  .fullscreen-active {
+    gap: 5px;
+    font-size: 1.3rem;
+  }
+  .fullscreen-active
+  .move-btn {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    margin-right: 8px;
+  }
+  .fullscreen-active
+  .move-icon {
+    height: 45px;
+  }
+  .fullscreen-active .playground {
+    transform: scale(1);
+    margin-top: 40px;
+    
+}
+
+  .fullscreen-active .dropDown {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    margin-left: 0;
+    z-index: 1000;
+    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+}
+
+  .fullscreen-active .volume-control {
+    top: auto;
+    bottom: -90px;
+    left: 30px;
+    z-index: 1000;
+  }
+
+  .fullscreen-active button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .fullscreen-active .title {
+    margin-bottom: 5%;
+    font-size: 24px;
+  }
+
+  .fullscreen-active .result {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  /* Adjust control buttons in fullscreen mobile view */
+  .fullscreen-active .score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .fullscreen-active .reset-score-btn,
+  .fullscreen-active .auto-play-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin: 0;
+    min-width: 90px;
+  }
+
+  
+}
+
+@media (max-width: 768px) {
+  #Main {
+    margin-top: 6rem !important;
+  }
+  .fullscreen-active {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+@media (max-width: 480px) {
+  #Main {
+    margin-top: 6rem !important;
+  }
+  .fullscreen-active {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+.bg-custom-alt {
+  background: linear-gradient(135deg, 
+    #ffd700 0%,    /* Golden */
+    #686326 25%,   /* White smoke */
+    #9c6f0e 50%,   /* Gray */
+    #4e4003 75%,   
+    #ffd700 100%); 
+  background-size: 400% 400%;
+  animation: desertGradient 20s ease infinite; 
+}
+
+@keyframes desertGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+@keyframes keyPressHalo {
+  0% {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4),
+                0 0 0 10px rgba(255, 255, 255, 0.2),
+                0 0 0 20px rgba(255, 0, 0, 0.1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px 10px rgba(255, 215, 0, 0.6),
+                0 0 50px 20px rgba(255, 255, 255, 0.4),
+                0 0 70px 30px rgba(255, 0, 0, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0),
+                0 0 0 0 rgba(255, 255, 255, 0),
+                0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+.move-btn.mode2-btn.key-press-active {
+  animation: keyPressHalo 0.8s ease-out;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.choice-input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.decision-mode {
+  margin-top: 20px;
+}
+
+/* Add transition for smooth color changes */
+.choice-input {
+  transition: background-color 0.5s ease;
+}
+
+.mode2-image {
+  width: 80px;
+  /*oranysizeyouwant*/height: 80px;
+  border-radius: 0;
+  /*roundedcorners*/transition: all 0.3s ease;
+  
+}
+
+
+/* AAAA */
+.move-btn.mode2-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.move-btn.mode1-btn {
+  border: 3px solid white;
+  border-radius: 60px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Sayfa yüksekliği ekranın tamamını kapsayacak şekilde */
+  display: flex;
+  justify-content: center; /* Sayfanın ortasında hizala */
+  align-items: center; /* Yatayda ortala */
+  overflow: hidden; /* Scrollbarları gizle */
+  background-color: #000; /* Arka plan rengini siyah yaparak oyun alanının dikkat çekmesini sağla */
+}
+
+#Main {
+  width: 100%;
+  height: 100%; /* Body'yi tamamen kaplasın */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.playground {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%; /* Tam genişlik */
+  height: auto;
+}
+
+.move-btn {
+  width: 150px; /* Oyun butonlarının genişliğini arttır */
+  height: 150px; /* Oyun butonlarının yüksekliğini arttır */
+  margin: 0 20px;
+}
+
+.title {
+  font-size: 3rem; /* Başlık boyutunu büyüt */
+  color: #fff; /* Başlık rengini beyaz yap */
+}
+
+.dropDown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+button {
+  font-size: 1.5rem; /* Buton boyutunu büyüt */
+  padding: 10px 20px;
+}
