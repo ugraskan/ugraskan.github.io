@@ -24,7 +24,6 @@ if (numOfDraws === null) {
   draw.innerHTML = numOfDraws;
 }
 
-
 function resetScores() {
   localStorage.removeItem("wins");
   localStorage.removeItem("loses");

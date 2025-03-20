@@ -90,12 +90,11 @@ class Person {
 	}
 
 	isBJ() {
-		if (this.value === 21)
+		if (this.values === 21)
 			return this.aces === 1 && this.faces === 1;
 	}
+	
 }
-
-
 /** set deck of cards */
 let cards = new DeckOfCards();
 
@@ -225,7 +224,6 @@ dealersTurn = () => {
 	}
 };
 
-
 whoIsWinner = () => {
 	let text = "";
 
@@ -233,13 +231,20 @@ whoIsWinner = () => {
 		numOfWins++;
 		localStorage.setItem("wins", numOfWins);
 		text = "KAZANDIN!";
-	} else {
+	} else if (dealer.values > player.values) {
 		numOfLoses++;
 		localStorage.setItem("loses", numOfLoses);
 		text = "KAYBETTİN..";
+	} else {
+		// Eşitlik durumu
+		numOfDraws++;
+		localStorage.setItem("draws", numOfDraws);
+		text = "BERABERE!";
 	}
+
 	showResult(text);
 }
+
 
 
 function showResult(text) {
@@ -255,9 +260,9 @@ function showResult(text) {
 	setTimeout(() => {
 		message.style.display = "block";
 		if (windowSize.matches) {
-			message.innerHTML = "click the reload btn to start new game";
+			message.innerHTML = "YENİ BİR OYUN BAŞLATMAK İÇİN YENİLEME BUTONUNA BASIN.";
 		} else {
-			message.innerHTML = "click the deck to start new game";
+			message.innerHTML = "YENİ BİR OYUN BAŞLATMAK İÇİN DESTEYE TIKLAYIN.";
 		}
 	}, 1200);
 }
