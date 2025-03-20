@@ -1,0 +1,165 @@
+:root {
+  background-color: #070720;
+  font-size: 62.5%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #070720;
+}
+
+h1 {
+  font-size: 5.4rem;
+  margin-bottom: 5rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+  margin-bottom: 4rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 3.8rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.red {
+  color: #e53637;
+}
+
+.bk {
+  color: #fff;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.flex-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.btn {
+  width: 18rem;
+  text-align: center;
+  border: 0.1rem solid #e53637;
+  font-size: 1.8rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  background-color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #e53637;
+  -webkit-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+  -webkit-box-shadow: 0.1rem 0.1rem 0.3rem rgba(255, 168, 0, 0.5);
+          box-shadow: 0.1rem 0.1rem 0.3rem rgba(255, 168, 0, 0.5);
+}
+
+.btn[disabled] {
+  cursor: not-allowed;
+  background-color: rgba(238, 238, 238, 0.5);
+}
+
+.btn[disabled]:hover {
+  color: #FFA800;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.btn.sml {
+  width: 10rem;
+  margin: 1rem;
+}
+
+#howToPlay {
+  width: 75%;
+  margin: 2rem 0;
+}
+
+#howToPlay ul {
+  list-style-position: inside;
+  margin-bottom: 3rem;
+}
+
+#howToPlay ul p {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+#howToPlay ul li {
+  color: #333;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#howToPlay ul strong {
+  color: #FF6347;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#scores {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.number {
+  font-size: 4rem;
+  padding: 0 1rem;
+}
+/*# sourceMappingURL=app.css.map */
