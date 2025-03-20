@@ -1,5 +1,5 @@
 :root {
-  background-color: #070720;
+  background-color: #35654d;
   font-size: 62.5%;
 }
 
@@ -9,7 +9,7 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin: 0;
   padding: 0;
-  color: #070720;
+  color: #000;
 }
 
 h1 {
@@ -40,7 +40,7 @@ h4 {
 }
 
 .bk {
-  color: #fff;
+  color: #000;
 }
 
 .container {
@@ -91,7 +91,7 @@ h4 {
 .btn {
   width: 18rem;
   text-align: center;
-  border: 0.1rem solid #e53637;
+  border: 0.1rem solid #000;
   font-size: 1.8rem;
   padding: 1rem;
   margin-bottom: 1rem;
