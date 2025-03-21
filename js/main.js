@@ -87,31 +87,26 @@
 
 document.getElementById("fullscreenBtn").addEventListener("click", function () {
     var iframe = document.getElementById("gameFrame");
+    var orientationType = iframe.getAttribute("data-orientation") || "landscape"; // Varsayılan olarak landscape
 
-    if (iframe.requestFullscreen) {
-        iframe.requestFullscreen().then(() => {
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock("landscape").catch(err => console.log(err));
-            }
-        });
-    } else if (iframe.mozRequestFullScreen) { // Firefox
-        iframe.mozRequestFullScreen().then(() => {
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock("landscape").catch(err => console.log(err));
-            }
-        });
-    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari ve Opera
-        iframe.webkitRequestFullscreen().then(() => {
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock("landscape").catch(err => console.log(err));
-            }
-        });
-    } else if (iframe.msRequestFullscreen) { // Internet Explorer / Edge
-        iframe.msRequestFullscreen().then(() => {
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock("landscape").catch(err => console.log(err));
-            }
-        });
+    function requestFullScreen(element) {
+        if (element.requestFullscreen) {
+            return element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            return element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+            return element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+            return element.msRequestFullscreen();
+        }
+        return Promise.reject("Fullscreen API not supported");
     }
+
+    requestFullScreen(iframe).then(() => {
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock(orientationType).catch(err => console.log(err));
+        }
+    }).catch(err => console.log(err));
 });
+
 
