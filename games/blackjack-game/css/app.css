@@ -1,6 +1,9 @@
 :root {
-  background-color: #35654d;
+  /* background-color: #35654d; */
+  background-image: url("/games/blackjack-game/resources/background.png");
   font-size: 62.5%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 * {

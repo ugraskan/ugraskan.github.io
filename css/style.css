@@ -1150,14 +1150,13 @@ ol {
     max-width: 1280px;
 }
 
-#gameFrameVertical {
-    width: 100%;
-    height: 720px; 
-    max-width: 1280px;
-}
-
 @media (max-width: 768px) { 
-    #gameFrame {
+    /* #gameFrame {
+        width: 100vw; 
+        height: 60vh; 
+    } */
+
+	#gameFrame {
         width: 100vw; 
         height: 60vh; 
     }
@@ -1182,108 +1181,6 @@ ol {
 	#footer_text{
 		text-align: center;
 	}
-}
-
-.anime__video__player .plyr--video {
-	border-radius: 5px;
-	background: transparent;
-}
-
-.anime__video__player .plyr audio,
-.anime__video__player .plyr iframe,
-.anime__video__player .plyr video {
-	width: 102%;
-}
-
-.anime__video__player .plyr--full-ui.plyr--video .plyr__control--overlaid {
-	display: block;
-}
-
-.anime__video__player .plyr--video .plyr__control.plyr__tab-focus,
-.anime__video__player .plyr--video .plyr__control:hover,
-.anime__video__player .plyr--video .plyr__control[aria-expanded=true] {
-	background: transparent;
-}
-
-.anime__video__player .plyr--video .plyr__controls {
-	background: transparent;
-}
-
-.anime__video__player .plyr--video .plyr__progress__buffer {
-	color: transparent;
-}
-
-.anime__video__player .plyr--full-ui input[type=range] {
-	color: #ffffff;
-}
-
-.anime__video__player .plyr__controls .plyr__controls__item.plyr__progress__container {
-	position: absolute;
-	left: 26px;
-	bottom: 45px;
-	width: calc(100% - 60px);
-}
-
-.anime__video__player .plyr__menu {
-	margin-right: 70px;
-}
-
-.anime__video__player .plyr__controls .plyr__controls__item:first-child {
-	position: absolute;
-	left: 32px;
-	bottom: 8px;
-}
-
-.anime__video__player .plyr__controls .plyr__controls__item:last-child {
-	position: absolute;
-	right: 32px;
-	bottom: 8px;
-}
-
-.anime__video__player .plyr__volume {
-	position: absolute;
-	width: auto;
-	left: 76px;
-	bottom: 8px;
-}
-
-.anime__video__player .plyr__controls .plyr__controls__item.plyr__time {
-	position: absolute;
-	left: 106px;
-	bottom: 12px;
-}
-
-.anime__video__player .plyr__control--overlaid {
-	background: transparent;
-	background: var(--plyr-video-control-background-hover, var(--plyr-color-main, var(--plyr-color-main, transparent)));
-}
-
-.anime__video__player .plyr__control--overlaid svg {
-	height: 60px;
-	width: 50px;
-}
-
-.anime__details__episodes {
-	margin-bottom: 35px;
-}
-
-.anime__details__episodes a {
-	display: inline-block;
-	font-size: 15px;
-	color: #ffffff;
-	background: rgba(255, 255, 255, 0.2);
-	padding: 10px 20px;
-	border-radius: 4px;
-	margin-right: 15px;
-	margin-bottom: 20px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-.anime__details__episodes a:hover {
-	color: #000000;
-	background: #ffffff;
 }
 
 /*---------------------
@@ -2372,9 +2269,16 @@ html body .qrsection .qr-content p {
     margin: 5px 0 !important;
 }
 
-iframe {
+/* iframe {
     width: 100%;
     height: 80vh;
+    border: none;
+	overflow: hidden;
+} */
+
+iframe {
+    width: 100%;
+    height: 100%;
     border: none;
 	overflow: hidden;
 }
@@ -2435,13 +2339,10 @@ html, body {
 	visibility:hidden;
 }
 
-#blur-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(10px); /* Arka planı bulanıklaştırır */
-    background: rgba(0, 0, 0, 0.8); /* Hafif saydam arka plan */
-    z-index: -1; /* Metnin arkasına alır */
+.hero__text h2,
+.hero__text p {
+    background: rgba(7, 7, 32, 0.8); 
+    padding: 5px 10px;
+    border-radius: 5px;
 }
+

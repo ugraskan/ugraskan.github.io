@@ -109,4 +109,3 @@ document.getElementById("fullscreenBtn").addEventListener("click", function () {
     }).catch(err => console.log(err));
 });
 
-
