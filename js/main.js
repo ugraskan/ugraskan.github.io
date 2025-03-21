@@ -84,6 +84,7 @@
 
 })(jQuery);
 
+
 document.getElementById("fullscreenBtn").addEventListener("click", function () {
     var iframe = document.getElementById("gameFrame");
 
@@ -113,3 +114,4 @@ document.getElementById("fullscreenBtn").addEventListener("click", function () {
         });
     }
 });
+
