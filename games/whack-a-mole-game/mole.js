@@ -20,7 +20,7 @@ function setGame() {
         document.getElementById("board").appendChild(tile);
     }
 
-    setInterval(setMole, 1500); 
+    setInterval(setMole, 1150); 
     setInterval(setPlant, 3000); 
     document.getElementById("restartBtn").style.display = "none"; 
 }
