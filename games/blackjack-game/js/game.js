@@ -104,6 +104,15 @@ let dealer = new Person();
 
 let gameOver = false;
 
+//Müzik efekt bileşenleri tanimlandi
+let backgroundSound = new Audio("./resources/sounds/main_sound.mp3");
+let loseSound = new Audio("./resources/sounds/lose_sound.wav");
+let winSound = new Audio("./resources/sounds/win_sound.wav");
+let drawSound = new Audio("./resources/sounds/draw_sound.wav");
+let hitSound = new Audio("./resources/sounds/card_hit_sound.wav");
+let clickSound = new Audio("./resources/sounds/click_sound.wav");
+let standSound = new Audio("./resources/sounds/stand_sound.wav");
+
 const playersHand = document.getElementById("playersHand");
 const playersPoint = document.getElementById("playersPoint");
 const dealersHand = document.getElementById("dealersHand");
@@ -149,10 +158,12 @@ if (player.bj) {
 		numOfDraws++;
 		localStorage.setItem("draws", numOfDraws);
 		showResult("BERABERE");
+		drawSound.play();
 	} else {
 		numOfWins++;
 		localStorage.setItem("wins", numOfWins);
 		showResult("Black Jack!!  KAZANDIN");
+		winSound.play();
 	}
 }
 
@@ -163,7 +174,7 @@ hit = () => {
 
 	playersHand.innerHTML += `<div class="hands flex-center flex-column">${newCard.suit + newCard.number}</div>`;
 	playersPoint.innerHTML = `[${player.values}]`;
-
+	hitSound.play();
 	/* if point is over 21 => game over */
 	isOver21();
 };
@@ -179,6 +190,7 @@ function isOver21() {
 			numOfLoses++;
 			localStorage.setItem("loses", numOfLoses);
 			showResult("KAYBETTİN..");
+			loseSound.play();
 		}
 	}
 }
@@ -186,7 +198,7 @@ function isOver21() {
 stand = () => {
 	let card = document.querySelector('.card');
 	card.classList.add('is-flipped');
-
+	standSound.play();
 	setTimeout("checkPoints()", 800);
 };
 
@@ -220,6 +232,7 @@ dealersTurn = () => {
 			numOfWins++;
 			localStorage.setItem("wins", numOfWins);
 			showResult("KAZANDIN!");
+			winSound.play();
 		}
 	}
 };
@@ -231,15 +244,18 @@ whoIsWinner = () => {
 		numOfWins++;
 		localStorage.setItem("wins", numOfWins);
 		text = "KAZANDIN!";
+		winSound.play();
 	} else if (dealer.values > player.values) {
 		numOfLoses++;
 		localStorage.setItem("loses", numOfLoses);
 		text = "KAYBETTİN..";
+		loseSound.play();
 	} else {
 		// Eşitlik durumu
 		numOfDraws++;
 		localStorage.setItem("draws", numOfDraws);
 		text = "BERABERE!";
+		drawSound.play();
 	}
 
 	showResult(text);
@@ -271,14 +287,17 @@ $(function () {
 	/** when player click the deck */
 	$('#deck').click(function () {
 		$('#restartModal').fadeIn();
+		clickSound.play();
 	});
 	$('#reload').click(function () {
 		$('#restartModal').fadeIn();
+		clickSound.play();
 	});
 	/** when player click the close button */
 	$('.close-modal').click(function () {
 		$('#resultModal').fadeOut();
 		$('#restartModal').fadeOut();
+		clickSound.play();
 	});
 
 });

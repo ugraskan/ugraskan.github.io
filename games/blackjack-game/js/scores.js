@@ -6,6 +6,8 @@ let numOfWins = JSON.parse(localStorage.getItem("wins"));
 let numOfLoses = JSON.parse(localStorage.getItem("loses"));
 let numOfDraws = JSON.parse(localStorage.getItem("draws"));
 
+let resetSound = new Audio("./resources/sounds/reset_sound.wav");
+
 if (numOfWins === null) {
   win.innerHTML = "0";
 } else {
@@ -31,4 +33,5 @@ function resetScores() {
   win.innerHTML = "0";
   lose.innerHTML = "0";
   draw.innerHTML = "0";
+  resetSound.play();
 }

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>21 - Nasıl Oynanır?</title>
-  <link rel="shortcut icon" href="resources/Kurallar_Favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="resources/images/Kurallar_Favicon.png" type="image/x-icon">
 
   <link rel="stylesheet" href="./css/app.css">
 </head>
@@ -38,9 +38,25 @@
       </ul>
       <a class="btn" href="./game.html">OYNA</a>
       <a class="btn" href="./index.html">ANASAYFAYA DÖN</a>
+      <audio id="click-sound2" src="./resources/sounds/click_sound.wav"></audio>
     </div>
   </div>
 
+  <script>
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault(); // Sayfanın hemen yönlenmesini engeller
+            const sound = document.getElementById('click-sound2');
+            sound.currentTime = 0; // Sesin baştan başlamasını sağlar
+            sound.play();
+
+            // Sesin çalmasına izin verdikten sonra yönlendirme yap
+            setTimeout(() => {
+                window.location.href = button.getAttribute('href');
+            }, 300); // 300 ms gecikme
+        });
+    });
+</script>
 </body>
 
 </html>

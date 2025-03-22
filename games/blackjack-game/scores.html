@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>21 - SKORLARIM</title>
-  <link rel="shortcut icon" href="resources/kupa_favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="resources/images/kupa_favicon.png" type="image/x-icon">
 
   <link rel="stylesheet" href="./css/app.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
@@ -25,11 +25,27 @@
         </h4>
       </div>
       <button class="btn" onclick="resetScores()">SKORLARI SIFIRLA</button>
-      <a class="btn" href="./index.html">ANASAYFAYA DÖN</a>
+      <a class="btn" id="home-btn" href="./index.html">ANASAYFAYA DÖN</a>
+      <audio id="click-sound3" src="resources/sounds/click_sound.wav"></audio>
     </div>
   </div>
 
   <script src="./js/scores.js"></script>
+  <script src="js/game.js"></script>
+	<script>
+    // Sadece ID ile seçici kullanıyoruz
+    document.getElementById('home-btn').addEventListener('click', (event) => {
+        event.preventDefault(); // Sayfanın hemen yönlenmesini engeller
+        const sound = document.getElementById('click-sound3');
+        sound.currentTime = 0; // Sesin baştan başlamasını sağlar
+        sound.play();
+
+        // Sesin çalmasına izin verdikten sonra yönlendirme yap
+        setTimeout(() => {
+            window.location.href = event.target.getAttribute('href');
+        }, 300); // 300 ms gecikme
+    });
+</script>
 </body>
 
 </html>
