@@ -1,11 +1,43 @@
-/*  */
-#Nav{
-  background-color: rgba(31,32,48,255);
-  
-}
+
 .bg-custom {
   background-color: rgba(31,32,48,1) !important;
 }
+.bg-custom-alt {
+  background: linear-gradient(135deg,     #ffd700 0%,    #e7c60b 10%,    #b89f14 17%,    #d4c414 25%,    #dab673 35%,    #9c6f0e 50%,    #978d57 75%,    #d8ac1b 100%);
+  background-size: 400% 400%;
+  animation: desertGradient 20s ease infinite;
+}
+.bg-custom-ocean {
+  background: linear-gradient(135deg,  
+    #87CEEB 0%,    /* Light Sky Blue */
+    #70B7E6 10%,   /* Soft Blue */
+    #5FA8D3 17%,   /* Ocean Blue */
+    #4682B4 25%,   /* Steel Blue */
+    #3B7BA3 35%,   /* Deep Sea Blue */
+    #2B6C92 50%,   /* Marine Blue */
+    #1F5A7A 75%,   /* Darker Ocean */
+    #0F4C75 100%   /* Deep Blue */
+);
+  /* background: linear-gradient(135deg,     rgba(0, 102, 204, 0.1) 0%,rgba(0, 191, 255, 0.4) 25%,rgba(0, 255, 255, 0.2) 50%,rgba(0, 128, 128, 0.2) 75%,skyblue 100%); */
+  background-size: 400% 400%;
+  animation: oceanGradient 20s ease infinite;
+}
+.bg-custom-forest {
+  background: linear-gradient(135deg,
+    #228B22 0%,    /* Forest Green */
+    #32CD32 10%,   /* Lime Green */
+    #008000 17%,   /* Green */
+    #2E8B57 25%,   /* Sea Green */
+    #3CB371 35%,   /* Medium Sea Green */
+    #6B8E23 50%,   /* Olive Drab */
+    #556B2F 75%,   /* Dark Olive Green */
+    #006400 100%   /* Dark Green */
+);
+background-size: 400% 400%;
+animation: forestGradient 20s ease infinite;
+
+}
+
 form{
   margin-right: auto;
 
@@ -39,12 +71,14 @@ main{
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  /* text-align: center; */
   padding: 20px;
   width: 60%;
   height: 80%;
   background-color: rgb(25,25,25);
   color:white;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
     
@@ -160,20 +194,16 @@ main{
 
 
 .fullscreen-active.bg-custom-alt {
-  background: linear-gradient(135deg, 
-    #ffd700 0%,
-    #686326 25%,
-    #9c6f0e 50%,
-    #4e4003 75%,
-    #ffd700 100%);
+  background: linear-gradient(135deg,     #ffd700 0%,    #e7c60b 10%,    #b89f14 17%,    #d4c414 25%,    #dab673 35%,    #9c6f0e 50%,    #978d57 75%,    #d8ac1b 100%);
   background-size: 400% 400%;
   animation: desertGradient 20s ease infinite;
+  -webkit-animation: desertGradient 20s ease infinite;
 }
 
 .fullscreen-active .playground {
-  transform: scale(1.4);
-  margin-top: 5vh;
+  transform: scale(1.2);
   margin-bottom: 5vh;
+  
 }
 
 .fullscreen-active .move-btn.mode1-btn {
@@ -188,6 +218,20 @@ main{
   width: 120px;
   height: 120px;
 }
+
+.fullscreen-active .move-btn.mode3-btn {
+  border: none;
+  width: 120px;
+  height: 120px;
+}
+
+.fullscreen-active .move-btn.mode4-btn {
+  border: none;
+  width: 120px;
+  height: 120px;
+}
+
+
 .fullscreen-active .score {
   position: fixed;
   bottom: 5vh;
@@ -299,65 +343,89 @@ main{
 
 /* Add responsive design rules */
 
-
-@media screen and (max-width: 768px) {
-  main {
-    width: 95%;
-    padding: 15px;
-  }
-  
-  .title {
-    font-size: 24px;
-  }
-  
-  .move-btn {
-    width: 80px;
-    height: 80px;
-    padding: 15px;
-    margin-right: 10px;
-  }
-  
-  .move-icon {
-    height: 35px;
-  }
-  
-  .result {
-    font-size: 18px;
-    margin-top: 30px;
-  }
-  
-  .reset-score-btn,
-  .auto-play-btn {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-}
-
 @media screen and (max-width: 480px) {
   main {
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 20px;
   }
   
   .title {
-    font-size: 20px;
+    left: 10%;
+    position: absolute;
+    top: 40px;
+    display: none;
+  }
+  .move-btn{
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 6px;
+  }
+  .move-btn img{
+    width: 50px;
+    height: 50px;
+  }
+
+  
+  .move-btn.mode1-btn{
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 6px;
+  }
+  .move-btn.mode1-btn img{
+    width: 50px;
+    height: 50px;
+  }
+
+  
+  
+  .move-btn.mode2-btn {
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 10px;
   }
   
-  .move-btn {
+  .move-btn.mode2-btn img{
     width: 60px;
     height: 60px;
-    padding: 10px;
-    margin-right: 8px;
   }
-  
+
+  .move-btn.mode3-btn{
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 10px;
+  }
+  .move-btn.mode3-btn img{
+    width: 60px;
+    height: 60px;
+  }
+
+  .move-btn.mode4-btn{
+    margin-top: 50px;
+    width: 80px;
+    height: 80px;
+    padding: 12px 12px;
+    margin-right: 10px;
+  }
+  .move-btn.mode4-btn img{
+    width: 60px;
+    height: 60px;
+  }
+
   .move-icon {
     height: 25px;
   }
   
   .result {
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   
   .score {
@@ -387,11 +455,19 @@ main{
   }
   
   .fullscreen-active .playground {
-    transform: scale(1.2);
+    transform: scale(1.1);
     margin-top: 12vh;
+
   }
+
+  .fullscreen-active .dropDown button{
+    padding: 6px 12px;
+  }
+
   .fullscreen-active .move-btn.mode1-btn,
-  .fullscreen-active .move-btn.mode2-btn {
+  .fullscreen-active .move-btn.mode2-btn,
+  .fullscreen-active .move-btn.mode3-btn,
+  .fullscreen-active .move-btn.mode4-btn {
     width: 80px;
     height: 80px;
     padding: 10px;
@@ -408,98 +484,31 @@ main{
     padding: 8px 12px;
     min-width: 90px;
   }
+  .fullscreen-active .volume-control {
+    top: auto;
+    bottom: -95px;
+    left: 10px;
+    z-index: 1000;
+  }
 }
 
-/* Adjust volume control for mobile */
-@media screen and (max-width: 768px) {
-  .volume-control {
-    width: 50px;
-    margin-top: 83px;
-  }
-  
-  .volume-bar {
-    width: 80px;
-    height: 4px;
-  }
-  
-  .volume-bar::-webkit-slider-thumb {
-    width: 12px;
-    height: 12px;
-  }
-  
-  .volume-bar::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-  }
-
-  
-}
-
-/* Add mobile fullscreen adjustments */
-@media screen and (max-width: 480px) {
-
-  .fullscreen-active .title{
+@media screen and (max-width:768px){
+  .title{
     display: none;
   }
   main{
-    top: 20%;
-    padding-top: 40px;
+    width: 100%;
+    height: 100%;
   }
-  .fullscreen-active {
-    gap: 5px;
-    font-size: 1.3rem;
+
+  .move-btn.mode1-btn img{
+    width: 60px;
+    height: 60px;
   }
-  .fullscreen-active
-  .move-btn {
-    width: 80px;
-    height: 80px;
-    padding: 10px;
-    margin-right: 8px;
-  }
-  .fullscreen-active
-  .move-icon {
-    height: 45px;
-  }
-  .fullscreen-active .playground {
-    transform: scale(1);
-    margin-top: 40px;
-    
 }
 
-  .fullscreen-active .dropDown {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    margin-left: 0;
-    z-index: 1000;
-    transform: scale(0.75);
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -o-transform: scale(0.75);
-}
 
-  .fullscreen-active .volume-control {
-    top: auto;
-    bottom: -90px;
-    left: 30px;
-    z-index: 1000;
-  }
 
-  .fullscreen-active button {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-
-  .fullscreen-active .title {
-    margin-bottom: 5%;
-    font-size: 24px;
-  }
-
-  .fullscreen-active .result {
-    font-size: 18px;
-    margin-top: 15px;
-  }
 
   /* Adjust control buttons in fullscreen mobile view */
   .fullscreen-active .score {
@@ -515,49 +524,13 @@ main{
   .fullscreen-active .auto-play-btn {
     font-size: 12px;
     padding: 8px 12px;
-    margin: 0;
     min-width: 90px;
   }
+  
+  
+
 
   
-}
-
-@media (max-width: 768px) {
-  #Main {
-    margin-top: 6rem !important;
-  }
-  .fullscreen-active {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-}
-@media (max-width: 480px) {
-  #Main {
-    margin-top: 6rem !important;
-  }
-  .fullscreen-active {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-}
-
-.bg-custom-alt {
-  background: linear-gradient(135deg, 
-    #ffd700 0%,    /* Golden */
-    #686326 25%,   /* White smoke */
-    #9c6f0e 50%,   /* Gray */
-    #4e4003 75%,   
-    #ffd700 100%); 
-  background-size: 400% 400%;
-  animation: desertGradient 20s ease infinite; 
-}
-
 @keyframes desertGradient {
   0% {
     background-position: 0% 50%;
@@ -571,6 +544,29 @@ main{
 }
 
 
+@keyframes oceanGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes forestGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 @keyframes keyPressHalo {
   0% {
@@ -593,47 +589,97 @@ main{
   }
 }
 
+@keyframes keyPressWavo {
+  0% {
+    background-color: rgba(0, 102, 204, 0.1); /* Deep ocean blue */
+    box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.4), /* Sky blue */
+                0 0 0 10px rgba(0, 255, 255, 0.2), /* Cyan */
+                0 0 0 20px rgba(0, 128, 128, 0.1); /* Teal */
+  }
+  50% {
+    background-color: rgba(0, 102, 204, 0.3);
+    box-shadow: 0 0 30px 10px rgba(0, 191, 255, 0.6),
+                0 0 50px 20px rgba(0, 255, 255, 0.4),
+                0 0 70px 30px rgba(0, 128, 128, 0.2);
+  }
+  100% {
+    background-color: rgba(0, 102, 204, 0);
+    box-shadow: 0 0 0 0 rgba(0, 191, 255, 0),
+                0 0 0 0 rgba(0, 255, 255, 0),
+                0 0 0 0 rgba(0, 128, 128, 0);
+  }
+}
+
+@keyframes keyPressForo {
+  0% {
+    background-color: rgba(25, 50, 30, 0.1); /* Dark jungle green */
+    box-shadow: 0 0 0 0 rgba(10, 80, 40, 0.4), /* Darker jungle green */
+                0 0 0 10px rgba(30, 70, 40, 0.2), /* Medium jungle green */
+                0 0 0 20px rgba(10, 40, 20, 0.1); /* Darkest jungle green */
+  }
+  50% {
+    background-color: rgba(25, 50, 30, 0.3);
+    box-shadow: 0 0 30px 10px rgba(10, 80, 40, 0.6),
+                0 0 50px 20px rgba(30, 70, 40, 0.4),
+                0 0 70px 30px rgba(10, 40, 20, 0.2);
+  }
+  100% {
+    background-color: rgba(25, 50, 30, 0);
+    box-shadow: 0 0 0 0 rgba(10, 80, 40, 0),
+                0 0 0 0 rgba(30, 70, 40, 0),
+                0 0 0 0 rgba(10, 40, 20, 0);
+  }
+}
+
 .move-btn.mode2-btn.key-press-active {
   animation: keyPressHalo 0.8s ease-out;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
-
-
-.input-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  margin-bottom: 20px;
+/* MODE3 */
+.move-btn.mode3-btn.key-press-active {
+  animation: keyPressWavo 0.6s ease-out;
+  border-radius: 20%;
+  transition: all 0.1s ease-in-out;
 }
 
-.choice-input {
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  width: 200px;
-  transition: background-color 0.3s ease;
-}
-
-.decision-mode {
-  margin-top: 20px;
-}
-
-/* Add transition for smooth color changes */
-.choice-input {
-  transition: background-color 0.5s ease;
+.move-btn.mode4-btn.key-press-active {
+  animation: keyPressForo 0.6s ease-out;
+  border-radius: 20%;
+  transition: all 0.1s ease-in-out;
 }
 
 .mode2-image {
   width: 80px;
-  /*oranysizeyouwant*/height: 80px;
+  height: 80px;
   border-radius: 0;
-  /*roundedcorners*/transition: all 0.3s ease;
+  transition: all 0.3s ease;
   
 }
-
+.mode3-image{
+  width: 80px;
+  height: 80px;
+  border-radius: 0;
+  transition: all 0.3s ease-in-out;
+}
+.mode4-image{
+  width: 80px;
+  height: 80px;
+  border-radius: 0;
+  transition: all 0.3s ease-in-out;
+}
 
 /* AAAA */
+.move-btn.mode4-btn{
+  border:none;
+  background-color: transparent;
+}
+
+.move-btn.mode3-btn{
+  border:none;
+  background-color: transparent;
+}
+
 .move-btn.mode2-btn {
   border: none;
   background-color: transparent;
@@ -642,55 +688,4 @@ main{
 .move-btn.mode1-btn {
   border: 3px solid white;
   border-radius: 60px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh; /* Sayfa yüksekliği ekranın tamamını kapsayacak şekilde */
-  display: flex;
-  justify-content: center; /* Sayfanın ortasında hizala */
-  align-items: center; /* Yatayda ortala */
-  overflow: hidden; /* Scrollbarları gizle */
-  background-color: #000; /* Arka plan rengini siyah yaparak oyun alanının dikkat çekmesini sağla */
-}
-
-#Main {
-  width: 100%;
-  height: 100%; /* Body'yi tamamen kaplasın */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.playground {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  width: 100%; /* Tam genişlik */
-  height: auto;
-}
-
-.move-btn {
-  width: 150px; /* Oyun butonlarının genişliğini arttır */
-  height: 150px; /* Oyun butonlarının yüksekliğini arttır */
-  margin: 0 20px;
-}
-
-.title {
-  font-size: 3rem; /* Başlık boyutunu büyüt */
-  color: #fff; /* Başlık rengini beyaz yap */
-}
-
-.dropDown {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-button {
-  font-size: 1.5rem; /* Buton boyutunu büyüt */
-  padding: 10px 20px;
 }

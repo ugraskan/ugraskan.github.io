@@ -28,7 +28,25 @@ const gameModes = {
     },
     audio: './Music/Ketsa - Suntax.mp3',
     background: 'bg-custom-alt'
-  }
+  },
+  mode3: {
+    images:{
+      rock:'rock-olt.png',
+      paper:'paper-olt.png',
+      scissor:'scissor-olt.png'
+    },
+    audio:'./Music/Ketsa - Mist.mp3',
+    background:'bg-custom-ocean'
+  },
+  mode4: {
+    images:{
+      rock:'rock-frst.png',
+      paper:'paper-frst.png',
+      scissor:'scissor-frst.png'
+    },
+    audio:'./Music/Joint C Beat Laboratory - Blooming Poison.mp3',
+    background:'bg-custom-forest'
+  },
 };
 
 function autoPlay(){
@@ -148,18 +166,23 @@ document.addEventListener('keydown', (event) => {
   if (button && currentMode === 2) {
     addKeyPressEffect(button);
   }
+  else if(button&&currentMode==3 || button&&currentMode===4){
+    addKeyPressEffect(button);
+  }
 });
 
 // Add the effect when clicking the buttons
 document.querySelectorAll('.move-btn').forEach((button, index) => {
   button.addEventListener('click', () => {
-    if (currentMode === 2) {
+    if (currentMode === 2 || currentMode===3||currentMode===4) {
       addKeyPressEffect(button);
     }
     const moves = ['rock', 'paper', 'scissor'];
     playGame(moves[index]);
   });
 });
+
+
 
 // Function to add the keypress effect
 function addKeyPressEffect(button) {
@@ -282,8 +305,8 @@ function Sound(){
     isSoundOn=true;
   }
 }
-
 document.addEventListener('DOMContentLoaded', initializeAudio);
+
 
 setTimeout(()=>{
   document.getElementById('tempro').style.display='none';
@@ -307,6 +330,7 @@ document.querySelector('.volume-control').addEventListener('click', function(e) 
 document.getElementById('btnone').addEventListener('click', () => switchMode(1));
 document.getElementById('btntwo').addEventListener('click', () => switchMode(2));
 document.getElementById('btnthree').addEventListener('click', () => switchMode(3));
+document.getElementById('btnfour').addEventListener('click',()=>switchMode(4));
 
 function switchMode(mode) {
   currentMode = mode;
@@ -327,16 +351,56 @@ function switchMode(mode) {
       btn.src = gameModes.mode2.images[moveType];
       btn.className = 'move-icon mode2-image';
       btn.closest('.move-btn').classList.remove('mode1-btn');
+      btn.closest('.move-btn').classList.remove('mode3-btn');
+      btn.closest('.move-btn').classList.remove('mode4-btn');
       btn.closest('.move-btn').classList.add('mode2-btn');
     });
     sound.src = gameModes.mode2.audio;
     sound.play();
-  } else {
+  } 
+
+  else if(mode===3){
+    mainElement.className=gameModes.mode3.background;
+    moveButtons.forEach(btn=>{
+      const moveType=btn.src.split('/').pop().split('-')[0];
+      btn.src = gameModes.mode3.images[moveType];
+      btn.className = 'move-icon mode3-image';
+      btn.closest('.move-btn').classList.remove('mode1-btn');
+      btn.closest('.move-btn').classList.remove('mode2-btn');
+      btn.closest('.move-btn').classList.add('mode3-btn');
+      btn.closest('.move-btn').classList.remove('mode4-btn');
+
+
+    });
+    sound.src=gameModes.mode3.audio;
+    sound.play();
+  }
+
+  else if(mode===4){
+    mainElement.className=gameModes.mode4.background;
+    moveButtons.forEach(btn=>{
+      const moveType=btn.src.split('/').pop().split('-')[0];
+      btn.src = gameModes.mode4.images[moveType];
+      btn.className = 'move-icon mode4-image';
+      btn.closest('.move-btn').classList.remove('mode1-btn');
+      btn.closest('.move-btn').classList.remove('mode2-btn');
+      btn.closest('.move-btn').classList.remove('mode3-btn');
+      btn.closest('.move-btn').classList.add('mode4-btn');
+
+    });
+    sound.src=gameModes.mode4.audio;
+    sound.play();
+  }
+  
+  
+  else {
     moveButtons.forEach(btn => {
       const moveType = btn.src.split('/').pop().split('-')[0];
       btn.src = gameModes.mode1.images[moveType];
       btn.className = 'move-icon mode1-image';
       btn.closest('.move-btn').classList.remove('mode2-btn');
+      btn.closest('.move-btn').classList.remove('mode3-btn');
+      btn.closest('.move-btn').classList.remove('mode4-btn');
       btn.closest('.move-btn').classList.add('mode1-btn');
     });
     sound.src = gameModes.mode1.audio;

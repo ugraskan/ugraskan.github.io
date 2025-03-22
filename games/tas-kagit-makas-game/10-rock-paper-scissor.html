@@ -11,10 +11,11 @@
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+      
 
   <main id="Main" class=" bg-custom"> 
     
-    <h1 class="title justify-content-center mt-4 mb-3">Taş Kağıt Makas</h1>
+    <h1 class="title justify-content-center mt-4 mb-3">Rock Paper Scissor</h1>
     <div class="dropDown">
      
       <button id="btn1" onclick="dropD()" title="settings"><i class="bi bi-gear"></i></button>
@@ -28,6 +29,7 @@
           <button id="btnone" class="idown bidown" type="button" title="one"><i class="bi bi-1-square"></i></button>
           <button id="btntwo" class="idown bidown" type="button" title="two"><i class="bi bi-2-square"></i></button>
           <button id="btnthree" class="idown bidown" type="button" title="three"><i class="bi bi-3-square"></i></button>
+          <button id="btnfour" class="idown bidown" type="button" title="four"><i class="bi bi-4-square"></i></button>
 
         </button>
       </div>
@@ -45,7 +47,7 @@
     <!-- <h3 id="temprora" class="fs-6">Pick one and Start!</h3> -->
       
     <div class="playground mt-5">
-      <button onclick="playGame('rock');" class="move-btn"  ondblclick="window.alert('after you picked your first choose u can use q,w,e keys to play.');">
+      <button onclick="playGame('rock');" class="move-btn" >
 
         <img src="rock-emoji.png" alt="rock" class="move-icon">
       </button>
@@ -66,10 +68,10 @@
     <!-- Score -->
     <p class="js-score score"></p>
     <button onclick="reset()" class="reset-score-btn">
-      Sıfırla
+      reset
     </button>
-    <button class="auto-play-btn" onclick="autoPlay()">Otomatik Oyna</button>
-    <h5 id="tempro" class="mt-3">Bir seçim yaptıktan sonra 'q, w, e' tuşlarını kullanabilirsiniz</h5>  
+    <button class="auto-play-btn" onclick="autoPlay()">Auto play</button>
+    <h5 id="tempro" class="mt-3">btw you can use 'q,w,e' after you picked one</h5>  
     
   </main>
   
