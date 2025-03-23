@@ -43,29 +43,6 @@ form{
 
 }
 
-
-#Input{
-  padding-left: 10px;
-  border-radius: 25px;
-  border: 1px solid #ccc;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  padding: 8px 15px;
-  width: 400px;
-  outline: none;
-}
-
-#Input::placeholder {
-  color: #aaa;
-}
-
-#Input:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: #fff;
-}
-
-
-/* //////////// */
 main{
   box-sizing: border-box;
   position: relative;
@@ -80,7 +57,9 @@ main{
   font-family: Arial, Helvetica, sans-serif;
   
 }
-
+#sOff{
+  display: none;
+}
     
 .title{
   font-size: 30px;
@@ -115,6 +94,7 @@ main{
 
 
 .playground{
+  margin-top: 5rem;
   display:block;
   left: auto;
   right: auto;
@@ -125,7 +105,7 @@ main{
   display: block;
 }
 .move-icon{
-  height: 50px;
+  height: 55px;
   
 }
 .move-btn{
@@ -137,8 +117,9 @@ main{
   width: 120px;
   height: 120px;
   cursor:pointer;
-  
 }
+
+
 .result{
   font-size: 20px;
   font-weight: bold;
@@ -162,30 +143,13 @@ main{
 }
     
 
-/* FUll screen active */
-/* .fullscreen-active{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 20px;
-  font-size: 1.5rem;
-} */
-
-/* .fullscreen-active .playground{
-  transform: scale(1.4);
-  margin-top: auto;
-  
-} */
-
 .fullscreen-active {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -197,7 +161,6 @@ main{
   background: linear-gradient(135deg,     #ffd700 0%,    #e7c60b 10%,    #b89f14 17%,    #d4c414 25%,    #dab673 35%,    #9c6f0e 50%,    #978d57 75%,    #d8ac1b 100%);
   background-size: 400% 400%;
   animation: desertGradient 20s ease infinite;
-  -webkit-animation: desertGradient 20s ease infinite;
 }
 
 .fullscreen-active .playground {
@@ -233,7 +196,6 @@ main{
 
 
 .fullscreen-active .score {
-  position: fixed;
   bottom: 5vh;
   left: 0;
   right: 0;
@@ -253,19 +215,22 @@ main{
   padding: 10px 20px;
 }
 
+.fullscreen-active .dropDown{
+  margin-right: 10%;
+}
+
 .fullscreen-active .dropDown button{
   font-size: .7rem;
 }
 .fullscreen-active .volume-control {
   position: absolute;
   display: none;
-  width: 75px;
-  transform: rotate(-90deg);
+  width: 70px;
   transform-origin: top left;
   left: 30%;
-  top: 95%;
-  margin-top: 103px;
+  top: 93%;
   z-index: 3;
+  
 }
 
 #imbra{
@@ -295,8 +260,8 @@ main{
 }
 
 .volume-bar {
-  width: 100px;
-  height: 5px;
+  width: 104px;
+  height: 7px;
   -webkit-appearance: none;
   background: #4065a8;
   outline: none;
@@ -329,6 +294,7 @@ main{
 /* Add this new style for the button container */
 #btn4 {
   position: relative;
+  z-index: 5;
 }
 
 #point{
@@ -342,175 +308,241 @@ main{
 
 
 /* Add responsive design rules */
-
-@media screen and (max-width: 480px) {
-  main {
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .title {
-    left: 10%;
-    position: absolute;
-    top: 40px;
+@media screen and (max-width:480px) {
+  #btn2{
+    background-color: #006400;
+    display: none !important;
+  } 
+  .title{
     display: none;
-  }
-  .move-btn{
-    margin-top: 50px;
-    width: 80px;
-    height: 80px;
-    padding: 12px 12px;
-    margin-right: 6px;
-  }
-  .move-btn img{
-    width: 50px;
-    height: 50px;
-  }
-
-  
-  .move-btn.mode1-btn{
-    margin-top: 50px;
-    width: 80px;
-    height: 80px;
-    padding: 12px 12px;
-    margin-right: 6px;
-  }
-  .move-btn.mode1-btn img{
-    width: 50px;
-    height: 50px;
+   }
+   body{
+    width: 100vw;
+    height: 100vh;
+   }
+  main{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
   }
 
-  
-  
-  .move-btn.mode2-btn {
-    margin-top: 50px;
-    width: 80px;
-    height: 80px;
-    padding: 12px 12px;
-    margin-right: 10px;
-  }
-  
-  .move-btn.mode2-btn img{
-    width: 60px;
-    height: 60px;
-  }
-
-  .move-btn.mode3-btn{
-    margin-top: 50px;
-    width: 80px;
-    height: 80px;
-    padding: 12px 12px;
-    margin-right: 10px;
-  }
-  .move-btn.mode3-btn img{
-    width: 60px;
-    height: 60px;
-  }
-
-  .move-btn.mode4-btn{
-    margin-top: 50px;
-    width: 80px;
-    height: 80px;
-    padding: 12px 12px;
-    margin-right: 10px;
-  }
-  .move-btn.mode4-btn img{
-    width: 60px;
-    height: 60px;
-  }
-
-  .move-icon {
-    height: 25px;
-  }
-  
-  .result {
-    font-size: 16px;
-    margin-top: 30px;
-  }
-  
-  .score {
-    margin-top: 30px;
-  }
-  
   .dropDown {
     margin-left: 85%;
   }
 
-  /* Add styles for control buttons in mobile view */
+  .dropDown button{
+    height: 30px;
+    width: 30px;
+  }
+ 
+  .playground{
+    align-items: center;
+    transform: scale(0.90);
+}
+
+  .move-btn {
+    background-color: transparent;
+    border: none;
+    margin-right: 20px;
+    width: 81px;
+    height: 81px;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .move-icon{
+    height: 40px;
+  }
+
+  .move-btn img{
+    width: 75px;
+    height: 75px;
+  }
+  
+
+  
+  .result {
+    font-size: 16px;
+    margin-top: 50px;
+  }
+  
+  .reset-score-btn,
+  .auto-play-btn {
+    display: inline;
+    font-size: 16px;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  
+  
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    margin-top: 0%;
+  }
+  
+  
+  .volume-bar{
+    width: 90px;
+  }
+  .volume-control {
+   display: none; 
+    position: absolute;
+    width: 80px;
+    top: 35%;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .volume-bar {
+    width: 80px;
+    height: 5px;
+    background: #4065a8;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .volume-bar::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .volume-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+  }
+}
+
+/* WARNING */
+/* WARNING */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  #btn2 {
+    background-color: #228B22; /* Slightly lighter green */
+    display: none !important;
+  }
+
+  .title {
+    display: block; /* Show the title for this range */
+    font-size: 24px; /* Adjust font size */
+    text-align: center;
+  }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: auto;
+  }
+
+  .dropDown {
+    margin-left: 90%;
+  }
+
+  .dropDown button {
+    height: 40px;
+    width: 40px;
+  }
+
+  .playground {
+    align-items: center;
+    transform: scale(1);
+    margin-top: 2rem;
+  }
+
+  .move-btn {
+    background-color: transparent;
+    border: none;
+    margin-right: 15px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .move-icon {
+    height: 50px;
+  }
+
+  .move-btn img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .result {
+    font-size: 18px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
   .reset-score-btn,
   .auto-play-btn {
     display: inline-block;
-    margin: 5px;
-    font-size: 12px;
-    padding: 6px 10px;
-    min-width: 80px;
+    font-size: 14px;
+    width: 100px;
+    margin: 10px auto;
+    padding: 8px;
   }
 
-  /* Container for control buttons */
   .score {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-  }
-  
-  .fullscreen-active .playground {
-    transform: scale(1.1);
-    margin-top: 12vh;
-
+    margin-top: 20px;
   }
 
-  .fullscreen-active .dropDown button{
-    padding: 6px 12px;
-  }
-
-  .fullscreen-active .move-btn.mode1-btn,
-  .fullscreen-active .move-btn.mode2-btn,
-  .fullscreen-active .move-btn.mode3-btn,
-  .fullscreen-active .move-btn.mode4-btn {
-    width: 80px;
-    height: 80px;
-    padding: 10px;
-  }
-  .fullscreen-active .move-icon {
-    height: 45px;
-  }
-  .fullscreen-active .score {
-    bottom: 10vh;
-  }
-  .fullscreen-active .reset-score-btn,
-  .fullscreen-active .auto-play-btn {
-    font-size: 12px;
-    padding: 8px 12px;
-    min-width: 90px;
-  }
-  .fullscreen-active .volume-control {
-    top: auto;
-    bottom: -95px;
-    left: 10px;
+  .volume-control {
     z-index: 1000;
+    top: 80%;
+    left: 10%;
+    display: block;
+  }
+
+  .volume-bar {
+    width: 80px;
+    height: 5px;
+    background: #4065a8;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .volume-bar::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .volume-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
   }
 }
 
-@media screen and (max-width:768px){
-  .title{
-    display: none;
-  }
-  main{
-    width: 100%;
-    height: 100%;
-  }
 
-  .move-btn.mode1-btn img{
-    width: 60px;
-    height: 60px;
-  }
-}
-
-
-
-
-  /* Adjust control buttons in fullscreen mobile view */
   .fullscreen-active .score {
     display: flex;
     flex-direction: row;
@@ -526,9 +558,6 @@ main{
     padding: 8px 12px;
     min-width: 90px;
   }
-  
-  
-
 
   
 @keyframes desertGradient {
@@ -649,12 +678,18 @@ main{
   transition: all 0.1s ease-in-out;
 }
 
+.mode1-image{
+  width: 80px;
+  height: 80px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
 .mode2-image {
   width: 80px;
   height: 80px;
   border-radius: 0;
   transition: all 0.3s ease;
-  
 }
 .mode3-image{
   width: 80px;
@@ -686,6 +721,38 @@ main{
 }
 
 .move-btn.mode1-btn {
-  border: 3px solid white;
-  border-radius: 60px;
+  border:none;
+}
+
+
+/*Iphone X*/
+
+.decisionBox{
+  background-color: whitesmoke;
+  padding: 10px;
+  display: none;
+}
+
+#btn5{
+  cursor: pointer;
+  height: 36px;
+  text-align: center;
+  justify-content: center;
+  /* width: 35px;
+  height: 40px; */
+}
+
+.decisionBox input{
+  color: white;
+
+}
+.right{
+  background-color: #006400;
+  width: 50%;
+
+}
+.left{
+  margin-right: 20px;
+  background-color: rgb(51, 75, 4);
+  width: 50%;
 }
